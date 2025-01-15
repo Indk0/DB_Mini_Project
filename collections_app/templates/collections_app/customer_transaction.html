@@ -3,6 +3,29 @@
 {% block title %}Customer Transaction{% endblock %}
 
 {% block content %}
-<h1>Customer Transaction</h1>
-<p>Here are the customer transactions.</p>
+<h1>Customer Transactions</h1>
+<p>Here are the customer transactions:</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Amount</th>
+            <th>Transaction Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.customer_id }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.transaction_date }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No transactions available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

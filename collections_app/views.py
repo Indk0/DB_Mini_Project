@@ -16,7 +16,6 @@ def home(request):
 
 def collectors_notes(request):
     notes = CollectorNotes.objects.all()
-    print(notes)
     context = {
         'title': 'Collectors Notes Page',
         'notes': notes,
@@ -25,8 +24,10 @@ def collectors_notes(request):
 
 
 def customer_transaction(request):
+    transactions = CustomerTransactions.object.all()
     context = {
         'title': 'Customer Transactions Page',
+        'transactions': transactions,
     }
     return render(request, 'collections_app/customer_transaction.html', context)
 
