@@ -24,7 +24,7 @@ def collectors_notes(request):
 
 
 def customer_transaction(request):
-    transactions = CustomerTransactions.object.all()
+    transactions = CustomerTransactions.objects.all()
     context = {
         'title': 'Customer Transactions Page',
         'transactions': transactions,
