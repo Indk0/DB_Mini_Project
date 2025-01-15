@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import CollectorNotes, CustomerTransactions, PaymentPlans
 from django.http import HttpResponse
+from django.shortcuts import redirect, get_object_or_404
 
 # Create your views here.
 
@@ -40,3 +41,15 @@ def plans(request):
         'payment_plans': payment_plans,
     }
     return render(request, 'collections_app/payment_plans.html', context)
+
+
+def edit_note(request):
+    if request.method == "POST":
+        note_id = request.POST.get("note_id")
+        note_content = request.POST.get("note_content")
+
+        note = get_object_or_404(CollectorNotes, id=note_id)
+        note.note = note_content
+        note.save()
+
+        return redirect("notes")  # Redirect back to collector notes page
