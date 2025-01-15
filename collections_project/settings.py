@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v4xx@0l!4gq78sw!u**acd)=9vg)u)87px1f7i20d@#hwm0x#c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-indk0-dbminiproject-24tacbdje28.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-debug-indk0-dbminiproject-24tacbdje28.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'collections',  # Replace with your database name
         'USER': 'root',         # Replace with your username
         'PASSWORD': 'gen44',    # Replace with your password
-        'HOST': 'localhost',    # Use TCP connection
+        'HOST': '127.0.0.1',    # Use TCP connection
         'PORT': '3306',         # MySQL's default port
     }
 }
