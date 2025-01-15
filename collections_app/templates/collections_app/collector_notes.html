@@ -9,7 +9,8 @@
 <p>Total notes: {{ notes.count }}</p>
 <ul>
     {% for note in notes %}
-    <li>Collector ID: {{ note.collector_id }} - Note: {{ note.note }}</li>
+    <li>Collector ID: {{ note.collector_id }} - Note: {{ note.note }}</li> 
+    <button id="note">Add Note</button>
     {% empty %}
     <li>No notes available.</li>
     {% endfor %}

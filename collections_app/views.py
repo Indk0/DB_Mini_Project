@@ -29,7 +29,8 @@ def customer_transaction(request):
         'title': 'Customer Transactions Page',
         'transactions': transactions,
     }
-    return render(request, 'collections_app/customer_transaction.html', context)
+    return render(request, 'collections_app/customer_transaction.html',
+                  context)
 
 
 def plans(request):

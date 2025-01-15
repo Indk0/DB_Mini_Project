@@ -1,0 +1,20 @@
+<div class="modal-container" id="modal-container">
+    <div class="modal-container">
+        <h2>Edit Collector Notes</h2>
+        <form id="editfromnote" method="post" action="{% url 'edit_note' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="noteContent">Note Content</label>
+                <textarea
+                    class="form-control"
+                    name="note_content"
+                    id="noteContent"
+                    rows="4"
+                    required
+                ></textarea>
+            </div>
+        </form>
+    </div>
+    <button id="save">Save Changes</button>
+    <button id="cancel">Cancel</button>
+</div>
