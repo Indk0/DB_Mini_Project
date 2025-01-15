@@ -15,8 +15,11 @@ def home(request):
 
 
 def collectors_notes(request):
+    notes = CollectorNotes.objects.all()
+    print(notes)
     context = {
         'title': 'Collectors Notes Page',
+        'notes': notes,
     }
     return render(request, 'collections_app/collector_notes.html', context)
 

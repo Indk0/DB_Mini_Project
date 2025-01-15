@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-v4xx@0l!4gq78sw!u**acd)=9vg)u)87px1f7i20d@#hwm0x#c
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-debug-indk0-dbminiproject-24tacbdje28.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://8000-debug-indk0-dbminiproject-24tacbdje28.ws.codeinstitute-ide.net']
 
 
 # Application definition

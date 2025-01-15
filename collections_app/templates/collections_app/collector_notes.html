@@ -5,5 +5,14 @@
 
 {% block content %}
 <h1>Collector Notes</h1>
-<p>Here are the notes collected by the system.</p>
+<p>Here are the notes collected by the system:</p>
+<p>Total notes: {{ notes.count }}</p>
+<ul>
+    {% for note in notes %}
+    <li>Collector ID: {{ note.collector_id }} - Note: {{ note.note }}</li>
+    {% empty %}
+    <li>No notes available.</li>
+    {% endfor %}
+</ul>
 {% endblock %}
+
