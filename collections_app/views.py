@@ -15,12 +15,21 @@ def home(request):
 
 
 def collectors_notes(request):
-    return HttpResponse("Collector Notes Page")
+    context = {
+        'title': 'Collectors Notes Page',
+    }
+    return render(request, 'collections_app/collector_notes.html', context)
 
 
 def customer_transaction(request):
-    return HttpResponse("Customer Transactions Page")
+    context = {
+        'title': 'Customer Transactions Page',
+    }
+    return render(request, 'collections_app/customer_transaction.html', context)
 
 
 def plans(request):
-    return HttpResponse("Payment Plans Page")
+    context = {
+        'title': 'Payment Plans Page',
+    }
+    return render(request, 'collections_app/payment_plans.html', context)
