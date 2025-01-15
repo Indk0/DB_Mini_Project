@@ -5,5 +5,30 @@
 
 {% block content %}
 <h1>Payment Plans</h1>
-<p>Here are the payment plans.</p>
+<p>Here are the payment plans:</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Plan Name</th>
+            <th>Monthly Payment</th>
+            <th>Duration (Months)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for plan in payment_plans %}
+        <tr>
+            <td>{{ plan.customer_id }}</td>
+            <td>{{ plan.plan_name }}</td>
+            <td>{{ plan.monthly_payment }}</td>
+            <td>{{ plan.duration_months }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No payment plans available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

@@ -33,7 +33,9 @@ def customer_transaction(request):
 
 
 def plans(request):
+    payment_plans = PaymentPlans.objects.all()
     context = {
         'title': 'Payment Plans Page',
+        'payment_plans': payment_plans,
     }
     return render(request, 'collections_app/payment_plans.html', context)
