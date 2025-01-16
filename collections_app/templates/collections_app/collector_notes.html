@@ -1,9 +1,7 @@
 {% extends 'collections_app/home.html' %}
 {% load static %}
 
-
 {% block title %}Collector Notes{% endblock %}
-
 
 {% block content %}
 <h1>Collector Notes</h1>
@@ -16,14 +14,38 @@
     <li>No notes available.</li>
     {% endfor %}
 </ul>
-<button class="btn btn-primary" id="open">Add Note</button>
-<!-- Include the modal -->
-{% include 'collections_app/edit_note.html' %}
-{% endblock %}
 
-<!-- Link styles and JavaScript -->
-{% block extra_scripts %}
-<link rel="stylesheet" href="{% static 'style.css' %}">
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" class="btn btn-primary">Add Note</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <form action="{% url 'add_note' %}" method="POST">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+        <!-- Collector ID Field -->
+        <div>
+            <label for="collectorId">Collector ID</label>
+            <input type="number" id="collectorId" name="collector_id" class="form-control" required>
+        </div>
+
+        <!-- Note Content Field -->
+        <div>
+            <label for="noteContent">Note Content</label>
+            <textarea id="noteContent" name="note_content" class="form-control" required></textarea>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Note</button>
+            <a href="{% url 'notes' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+  </div>
+</div>
+
+<!-- Include JS -->
 <script src="{% static 'popup.js' %}"></script>
 {% endblock %}
-
