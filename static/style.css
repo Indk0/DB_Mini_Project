@@ -35,3 +35,7 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.form-actions .btn {
+  margin-top: 10px;
+}
