@@ -45,11 +45,11 @@ def plans(request):
 
 def edit_note(request):
     if request.method == "POST":
-        note_id = request.POST.get("note_id")
         note_content = request.POST.get("note_content")
 
-        note = get_object_or_404(CollectorNotes, id=note_id)
-        note.note = note_content
-        note.save()
+        # Create a new note
+        new_note = CollectorNotes(note=note_content)
+        new_note.save()
 
-        return redirect("notes")  # Redirect back to collector notes page
+        return redirect("notes")  # Redirect back to the notes page
+

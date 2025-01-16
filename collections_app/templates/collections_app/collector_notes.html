@@ -10,10 +10,18 @@
 <ul>
     {% for note in notes %}
     <li>Collector ID: {{ note.collector_id }} - Note: {{ note.note }}</li> 
-    <button id="note">Add Note</button>
+    <button class="btn btn-primary" onclick="openForm()">Add Note</button>
     {% empty %}
     <li>No notes available.</li>
     {% endfor %}
 </ul>
+<!-- Include the modal -->
+{% include 'collections_app/editnotehtml.html' %}
+{% endblock %}
+
+<!-- Link styles and JavaScript -->
+{% block extra_scripts %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<script src="{% static 'popup.js' %}"></script>
 {% endblock %}
 
