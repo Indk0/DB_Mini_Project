@@ -1,4 +1,5 @@
 {% extends 'collections_app/home.html' %}
+{% load static %}
 
 {% block title %}Collector Notes{% endblock %}
 
@@ -16,7 +17,7 @@
     {% endfor %}
 </ul>
 <!-- Include the modal -->
-{% include 'collections_app/editnotehtml.html' %}
+{% include 'collections_app/edit_note.html' %}
 {% endblock %}
 
 <!-- Link styles and JavaScript -->

@@ -1,7 +1,7 @@
 <div class="modal-container" id="modal-container">
     <div class="modal-content">
         <h2>Edit Collector Notes</h2>
-        <form id="editfromnote" method="post" action="{% url 'edit_note' %}">
+        <form id="editnote" method="post" action="{% url 'edit_note' %}">
             {% csrf_token %}
             <div class="form-group">
                 <label for="noteContent">Note Content</label>

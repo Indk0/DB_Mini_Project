@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +27,11 @@ SECRET_KEY = 'django-insecure-v4xx@0l!4gq78sw!u**acd)=9vg)u)87px1f7i20d@#hwm0x#c
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-debug-indk0-dbminiproject-24tacbdje28.ws.codeinstitute-ide.net']
-CSRF_TRUSTED_ORIGINS = ['https://8000-debug-indk0-dbminiproject-24tacbdje28.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net']
 
 
 # Application definition
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'collections_app',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'collections_project.urls'
@@ -88,7 +93,6 @@ DATABASES = {
 
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -124,6 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
