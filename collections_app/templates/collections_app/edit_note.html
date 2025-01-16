@@ -1,23 +1,15 @@
-<div class="modal-container" id="modal-container">
+{% load static %}
+<div id="modal_container" class="modal-container">
     <div class="modal-content">
-        <h2>Edit Collector Notes</h2>
-        <form id="editnote" method="post" action="{% url 'edit_note' %}">
+        <form action="{% url 'edit_note' %}" method="POST" class="form-container">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="noteContent">Note Content</label>
-                <textarea
-                    class="form-control"
-                    name="note_content"
-                    id="noteContent"
-                    rows="4"
-                    required
-                ></textarea>
-            </div>
-
+            <label for="noteContent">Note Content</label>
+            <textarea id="noteContent" name="note_content" required></textarea>
             <div class="form-actions">
-                <button type="submit" id="save" class="btn btn-primary">Save Changes</button>
-                <button type="button" id="cancel" class="btn btn-secondary" onclick="closeForm()">Cancel</button>
+                <button type="submit" class="btn">Save</button>
+                <button type="button" class="btn cancel" id="close">Cancel</button>
             </div>
         </form>
     </div>
 </div>
+

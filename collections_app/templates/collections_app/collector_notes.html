@@ -1,6 +1,7 @@
 {% extends 'collections_app/home.html' %}
 {% load static %}
 
+
 {% block title %}Collector Notes{% endblock %}
 
 
@@ -11,11 +12,11 @@
 <ul>
     {% for note in notes %}
     <li>Collector ID: {{ note.collector_id }} - Note: {{ note.note }}</li> 
-    <button class="btn btn-primary" onclick="openForm()">Add Note</button>
     {% empty %}
     <li>No notes available.</li>
     {% endfor %}
 </ul>
+<button class="btn btn-primary" id="open">Add Note</button>
 <!-- Include the modal -->
 {% include 'collections_app/edit_note.html' %}
 {% endblock %}

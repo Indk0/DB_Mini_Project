@@ -1,11 +1,11 @@
-function openForm() {
-  // Clear the form fields (if any)
-  document.getElementById("noteContent").value = "";
+const open = document.getElementById('open');
+const modal_container = document.getElementById('modal_container');
+const close = document.getElementById('close');
 
-  // Open the modal
-  document.getElementById("modal-container").style.display = "flex";
-}
+open.addEventListener('click', () => {
+    modal_container.classList.add('show');
+});
 
-function closeForm() {
-  document.getElementById("modal-container").style.display = "none";
-}
+close.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+});
