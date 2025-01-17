@@ -11,5 +11,3 @@ os.environ.setdefault('USER', 'root')
 os.environ.setdefault('PASSWORD', 'gen44')
 
 os.environ.setdefault('HOST', '127.0.0.1')
-
-os.environ.setdefault('PORT', '3306')
