@@ -14,12 +14,13 @@
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: #fefefe !important;
+  margin: 15% auto !important;
+  padding: 20px !important;
+  border: 1px solid #888 !important;
+  width: 80% !important;
 }
+
 
 /* The Close Button */
 .close {
@@ -36,6 +37,7 @@
   cursor: pointer;
 }
 
+/* Add margin to the buttons */
 .form-actions .btn {
   margin-top: 10px;
 }

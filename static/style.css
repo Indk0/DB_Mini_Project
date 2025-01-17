@@ -37,6 +37,7 @@
   cursor: pointer;
 }
 
+/* Add margin to the buttons */
 .form-actions .btn {
   margin-top: 10px;
 }
