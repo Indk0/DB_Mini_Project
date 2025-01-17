@@ -36,6 +36,6 @@
   cursor: pointer;
 }
 
-.btn-primary {
-  margin: 5px;
+.form-actions .btn {
+  margin-top: 10px;
 }
