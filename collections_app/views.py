@@ -16,7 +16,8 @@ def home(request):
 
 
 def collectors_notes(request):
-    notes = CollectorNotes.objects.all().order_by('-created_at')  # Sort by newest first
+    notes = CollectorNotes.objects.all().order_by(
+        '-created_at')  # Sort by newest first
     context = {
         'title': 'Collectors Notes Page',
         'notes': notes,
@@ -53,14 +54,18 @@ def edit_note(request):
 
         return redirect("notes")  # Redirect back to the notes page
 
+
 def add_note(request):
     if request.method == "POST":
-        collector_id = request.POST.get('collector_id')  # Retrieve collector ID from the form
-        note_content = request.POST.get('note_content')  # Retrieve the note content from the form
+        # Retrieve collector ID from the form
+        collector_id = request.POST.get('collector_id')
+        # Retrieve the note content from the form
+        note_content = request.POST.get('note_content')
 
         if collector_id and note_content:
             # Save the data to the database
-            CollectorNotes.objects.create(collector_id=collector_id, note=note_content)
+            CollectorNotes.objects.create(
+                collector_id=collector_id, note=note_content)
             return redirect('notes')  # Redirect to the collector notes page
 
     # Handle GET requests or incomplete form submissions

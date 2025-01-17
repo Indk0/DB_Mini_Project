@@ -9,11 +9,17 @@ class CollectorNotes(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name_plural = "collector notes"
+
 
 class CustomerTransactions(models.Model):
     customer_id = models.IntegerField()
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     transaction_date = models.DateTimeField()
+
+    class Meta:
+        verbose_name_plural = "customer transactions"
 
 
 class PaymentPlans(models.Model):
@@ -21,3 +27,6 @@ class PaymentPlans(models.Model):
     plan_name = models.CharField(max_length=100)
     monthly_payment = models.DecimalField(max_digits=10, decimal_places=2)
     duration_months = models.IntegerField()
+
+    class Meta:
+        verbose_name_plural = "payment plans"
