@@ -12,7 +12,7 @@
 #### To get into the database I used the terminal command: mysql -u root -p --protocal=tcp
 
 ## Credits
-#### To create the modal pop up I used this guide: ![Modal Guide](https://www.w3schools.com/howto/howto_css_modals.asp)
+#### To create the modal pop up I used this guide: [Modal Guide](https://www.w3schools.com/howto/howto_css_modals.asp)
 
 ## Acknowledgements
 #### I'd like to thank John, Paul and my cohort for helping me to get through the project.
