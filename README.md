@@ -10,6 +10,7 @@
 ## Other notes
 #### To start the installation process I would type gp validate in the terminal.
 #### To get into the database I used the terminal command: mysql -u root -p --protocal=tcp
+#### DEBUG is set to TRUE
 
 ## Credits
 #### To create the modal pop up I used this guide: [Modal Guide](https://www.w3schools.com/howto/howto_css_modals.asp)
