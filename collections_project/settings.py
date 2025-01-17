@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'collections_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get("ENGINE"),
-        'NAME': 'collections',  # Replace with your database name
-        'USER': 'root',         # Replace with your username
-        'PASSWORD': 'gen44',    # Replace with your password
-        'HOST': '127.0.0.1',    # Use TCP connection
-        'PORT': '3306',         # MySQL's default port
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'HOST': os.environ.get('HOST'),
+        'PORT': os.environ.get('PORT'),
     }
 }
 
