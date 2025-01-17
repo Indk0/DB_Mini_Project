@@ -8,7 +8,7 @@ tasks:
 
       # Initialize MySQL if it's not already initialized
       if [ ! -d "mysql-data/mysql" ]; then
-        sudo mysqld --initialize-insecure --datadir=/workspace/mysql-data
+        sudo mysqld --initialize-insecure --datadir=mysql-data
       fi
 
       # Start MySQL using the persistent data directory
